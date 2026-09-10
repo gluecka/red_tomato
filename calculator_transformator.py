@@ -1,5 +1,6 @@
 import json
 import statistics
+import datetime
 
 class ConfigClass:
     # define the path of configfile directly in init line as parameter
@@ -21,6 +22,7 @@ class SensorValueTrasformator(ConfigClass):
         super().__init__()
         self.imput_value = imput_value
 
+    @property
     def percent_calculation(self) -> float:
             self.low_wather = self.config['low_wather']
             self.high_wather = self.config['high_wather']
@@ -41,13 +43,25 @@ class SensorValueTrasformator(ConfigClass):
             soil_condition = round(statistics.mean(self.list_of_soil_condition), 2)
             return soil_condition
 
+    @property
+    def time_check(self) -> bool:
+        self.start_wathering_time_range = self.config['start_wathering_time_range']
+        self.stop_wathering_time_range = self.config['stop_wathering_time_range']
 
-    # @percent_calculation
-    # def trigger_desicion(self) -> bool:
-    #     def __init__(self):
-    #         self.trigger_limit = self.config['trigger_limit']
+        start_time = datetime.time(self.start_wathering_time_range, 0, 0)
+        stop_time = datetime.time(self.stop_wathering_time_range, 0, 0)
 
-    #     if soil_condition <= self.trigger_limit:
-    #         return True
-    #     else:
-    #         return False
+        if start_time <= datetime.datetime.now().time() or datetime.datetime.now().time() <= stop_time:
+            return True
+        else:
+            return False
+
+    @property
+    def trigger_desicion(self) -> bool:
+        def __init__(self):
+            self.trigger_limit = self.config['trigger_limit']
+
+        if self.percent_calculation <= self.trigger_limit and self.time_check == True:
+            return True
+        else:
+            return False

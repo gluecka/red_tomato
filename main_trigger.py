@@ -70,4 +70,6 @@ for x in range(10):
 print(test_liste)
 
 test_object = SensorValueTrasformator(test_liste)
-print(test_object.percent_calculation())
+print(test_object.percent_calculation)
+print(test_object.trigger_desicion)
+print(test_object.time_check)
