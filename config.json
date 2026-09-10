@@ -5,7 +5,7 @@
     "wathering_time" : 1200,
     "effect_time" : 600,
     "trigger_limit" : 45,
-    "loop_counter_limit" : 40,
+    "list_loop_counter" : 40,
     "start_wathering_time_range" : 9,
     "stop_wathering_time_range" : 21
 }
