@@ -2,10 +2,11 @@
     "low_wather" : 23000,
     "high_wather" : 10000,
     
-    "wathering_time" : 1200,
-    "effect_time" : 600,
+    "wathering_time" : 10,
+    "effect_time" : 10,
     "trigger_limit" : 45,
-    "list_loop_counter" : 40,
-    "start_wathering_time_range" : 17,
+    "list_loop_counter_trigger" : 40,
+    
+    "start_wathering_time_range" : 15,
     "stop_wathering_time_range" : 11
 }

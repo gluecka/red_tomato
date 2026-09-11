@@ -57,7 +57,7 @@ class SensorValueTrasformator(ConfigClass):
             return False
 
     @property
-    def trigger_desicion(self) -> bool:
+    def trigger_decision(self) -> bool:
         def __init__(self):
             self.trigger_limit = self.config['trigger_limit']
 
