@@ -5,7 +5,6 @@ from adafruit_ads1x15.analog_in import AnalogIn
 import RPi.GPIO as GPIO
 import time
 import datetime
-import statistics
 from calculator_transformator import SensorValueTrasformator
 import json
 
@@ -59,3 +58,7 @@ while True:
         time.sleep(1)
 
     del list_of_values # -> delete the list to free up memory
+
+
+    # deactivate line with print mode
+    # set correct parameter in config.json
